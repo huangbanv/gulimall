@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.60.100:1111
+        namespace: a44e424e-36a8-4a4a-88ed-bdf589f4b921
+        shared-configs[0]:
+          data-id: coupon.yml
+  application:
+    name: gulimall-coupon
+
+

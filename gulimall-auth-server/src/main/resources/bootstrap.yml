@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.60.100:1111
+        namespace: 0e150eae-e9dc-45b5-bb69-76714f06ea89
+        shared-dataids:
+        shared-configs[0]:
+          data-id: auth-server.yml
+  application:
+    name: gulimall-auth-server

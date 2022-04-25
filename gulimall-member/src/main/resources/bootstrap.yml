@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.60.100:1111
+        namespace: 48d69e53-d62f-4e09-88e3-cd5017ee82cc
+        shared-configs[0]:
+          data-id: member.yml
+  application:
+    name: gulimall-member

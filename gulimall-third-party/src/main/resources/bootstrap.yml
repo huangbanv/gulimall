@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.60.100:1111
+        namespace: 7d0c5af8-5312-4467-87bd-ecac737cf1d3
+        shared-configs[0]:
+          data-id: oss.yml
+        shared-configs[1]:
+          data-id: third-party.yml
+
+  application:
+    name: gulimall-third-party

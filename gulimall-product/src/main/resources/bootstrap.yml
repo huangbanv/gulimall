@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.60.100:1111
+        namespace: cb38c9e4-5c46-4560-a0a9-b904991aec5c
+        shared-configs[0]:
+          data-id: product.yml
+  application:
+    name: gulimall-product

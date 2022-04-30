@@ -92,5 +92,9 @@ public class MemberEntity implements Serializable {
 	 * ע??ʱ?
 	 */
 	private Date createTime;
+	private String socialUid;
+	private String accessToken;
+	private String expiresIn;
+	private String giteeId;
 
 }

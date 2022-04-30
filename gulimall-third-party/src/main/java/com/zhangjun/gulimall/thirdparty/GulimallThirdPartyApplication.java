@@ -9,6 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * @author 张钧的电脑
  */
+
 @EnableDiscoveryClient
 @SpringBootApplication
 public class GulimallThirdPartyApplication {

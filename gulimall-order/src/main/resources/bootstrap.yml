@@ -7,4 +7,4 @@ spring:
         shared-configs[0]:
           data-id: order.yml
   application:
-    name: gulimall-third-party
+    name: gulimall-order

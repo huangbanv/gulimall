@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.60.100:1111
+        namespace: 896d2c96-a096-4618-a9df-49f61a62b432
+        shared-configs[0]:
+          data-id: cart.yml
+  application:
+    name: gulimall-cart

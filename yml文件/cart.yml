@@ -1,0 +1,22 @@
+server:
+  port: 40000
+spring: 
+  session:
+    store-type: redis
+  redis:
+    host: #redis地址
+    password: 123456
+    port: 6379
+  cloud:
+    nacos:
+      discovery: 
+        service: gulimall-cart
+        server-addr: #nacos地址
+  thymeleaf: 
+    cache: false
+
+gulimall:
+  thread:
+    core-size: 20
+    max-size: 200
+    keep-alive-time: 10

@@ -13,6 +13,9 @@ import com.zhangjun.gulimall.order.entity.OrderItemEntity;
 import com.zhangjun.gulimall.order.service.OrderItemService;
 
 
+/**
+ * @author 张钧的电脑
+ */
 @Service("orderItemService")
 public class OrderItemServiceImpl extends ServiceImpl<OrderItemDao, OrderItemEntity> implements OrderItemService {
 

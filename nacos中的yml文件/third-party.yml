@@ -1,8 +1,0 @@
-spring:
-  cloud:
-    nacos:
-      discovery:
-        service: gulimall-third-party
-        server-addr: #nacos地址
-server:
-  port: 30000

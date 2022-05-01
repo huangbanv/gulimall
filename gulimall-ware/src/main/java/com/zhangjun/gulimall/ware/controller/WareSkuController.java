@@ -29,7 +29,6 @@ public class WareSkuController {
     @Autowired
     private WareSkuService wareSkuService;
 
-
     @PostMapping("/hasstock")
     public R getSkusHasStock(@RequestBody List<Long> skuIds){
         List<SkuHasStockVo> vos = wareSkuService.getSkusHasStock(skuIds);

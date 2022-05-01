@@ -1,9 +1,0 @@
-spring:  
-    application:  
-        name: gulimall-gateway
-    cloud: 
-        nacos: 
-            discovery: 
-                server-addr: #nacos地址
-server: 
-    port: 88

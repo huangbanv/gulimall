@@ -3,6 +3,7 @@ package com.zhangjun.gulimall.cart.service;
 import com.zhangjun.gulimall.cart.vo.Cart;
 import com.zhangjun.gulimall.cart.vo.CartItem;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -24,4 +25,6 @@ public interface CartService {
     void changeItemCount(Long skuId, Integer num);
 
     void deleteItem(Long skuId);
+
+    List<CartItem> getUserCartItems();
 }

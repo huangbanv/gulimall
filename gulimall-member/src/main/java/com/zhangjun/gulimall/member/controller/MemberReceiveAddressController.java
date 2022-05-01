@@ -1,15 +1,14 @@
 package com.zhangjun.gulimall.member.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.mysql.cj.log.Log;
+import com.zhangjun.gulimall.member.service.impl.MemberReceiveAddressServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.zhangjun.gulimall.member.entity.MemberReceiveAddressEntity;
 import com.zhangjun.gulimall.member.service.MemberReceiveAddressService;
@@ -30,6 +29,13 @@ import com.zhangjun.common.utils.R;
 public class MemberReceiveAddressController {
     @Autowired
     private MemberReceiveAddressService memberReceiveAddressService;
+
+
+    @GetMapping("/{memberId}/addresses")
+    public List<MemberReceiveAddressEntity> getAddress(@PathVariable("memberId")Long memberId){
+        return memberReceiveAddressService.getAddress(memberId);
+    }
+
 
     /**
      * 列表

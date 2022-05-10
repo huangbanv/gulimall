@@ -1,0 +1,35 @@
+spring:
+  zipkin:
+    base-url: http://192.168.60.3:9411/
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  session:
+    store-type: redis
+  redis:
+     host: 192.168.60.10
+    password: 123456
+    port: 6379
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.60.3:8858
+    nacos:
+      discovery:
+        server-addr: 192.168.60.100:1111
+        service: gulimall-search
+      config:
+        enabled: false
+  thymeleaf:
+    cache: false
+server:
+  port: 21000
+
+management: 
+  endpoints:  
+    web: 
+      exposure: 
+        include: '*'

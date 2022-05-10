@@ -1,0 +1,36 @@
+spring:
+  zipkin:
+    base-url: http://192.168.60.3:9411/
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  datasource:
+    username: root
+    password: '072900'
+    url: jdbc:mysql://192.168.60.9:3306/gulimall_sms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.60.3:8858
+    nacos:
+      discovery:
+        server-addr: 192.168.60.100:1111
+        service: gulimall-coupon
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 7000
+
+management: 
+  endpoints:  
+    web: 
+      exposure: 
+        include: '*'

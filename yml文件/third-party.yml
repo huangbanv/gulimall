@@ -1,0 +1,31 @@
+spring:
+  zipkin:
+    base-url: http://192.168.60.3:9411/
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.60.3:8858
+    nacos:
+      discovery:
+        service: gulimall-third-party
+        server-addr: 192.168.60.100:1111
+server:
+  port: 30000
+
+management: 
+  endpoints:  
+    web: 
+      exposure: 
+        include: '*'
+
+gulimall:
+  mail:
+    host: 
+    user: 
+    password: 

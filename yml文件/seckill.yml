@@ -1,0 +1,38 @@
+spring:
+  zipkin:
+    base-url: http://192.168.60.3:9411/
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  thymeleaf:
+    cache: false
+  session: 
+    store-type: redis
+  rabbitmq:
+    host: 192.168.60.11
+    virtual-host: /
+    username: admin
+    password: admin
+  redis: 
+    host: 192.168.60.10
+    password: 123456
+    port: 6379
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.60.3:8858
+    nacos:
+      discovery:
+        service: gulimall-seckill
+        server-addr: 192.168.60.100:1111
+server:
+  port: 25000
+
+management: 
+  endpoints:  
+    web: 
+      exposure: 
+        include: '*'

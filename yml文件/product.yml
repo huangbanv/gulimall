@@ -1,0 +1,57 @@
+spring:
+  zipkin:
+    base-url: http://192.168.60.3:9411/
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  session:
+    store-type: redis
+  datasource:
+    username: root
+    password: '072900'
+    url: jdbc:mysql://192.168.60.9:3306/gulimall_pms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.60.3:8858
+    nacos:
+      discovery:
+        service: gulimall-product
+        server-addr: 192.168.60.100:1111
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.60.10
+    password: 123456
+    port: 6379
+  cache:
+    type: redis
+    redis:
+      time-to-live: 3600000
+      #建议不指定前缀，默认分区名前缀key-prefix: CACHE_
+      use-key-prefix: true
+      #是否缓存空值（可防止缓存穿透）
+      cache-null-values: true
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 10001
+gulimall:
+  thread:
+    core-size: 20
+    max-size: 200
+    keep-alive-time: 10
+management: 
+  endpoints:  
+    web: 
+      exposure: 
+        include: '*'

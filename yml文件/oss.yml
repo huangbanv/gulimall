@@ -1,0 +1,7 @@
+alibaba:
+  cloud:
+    access-key: 
+    secret-key: 
+    oss:
+      bucket: 
+      endpoint: 

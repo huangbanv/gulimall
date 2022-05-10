@@ -4,7 +4,13 @@ spring:
       config:
         server-addr: 192.168.60.100:1111
         namespace: 0e150eae-e9dc-45b5-bb69-76714f06ea89
+#        server-addr: 124.71.113.249:1234
+#        namespace: 6
         shared-configs[0]:
           data-id: auth-server.yml
   application:
     name: gulimall-auth-server
+
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN

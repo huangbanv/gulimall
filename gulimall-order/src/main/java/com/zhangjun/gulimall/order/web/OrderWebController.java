@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.swing.text.AbstractDocument;
@@ -49,7 +50,11 @@ public class OrderWebController {
             redirectAttributes.addFlashAttribute("msg",msg);
             return "redirect:http://order.gulimall.com/toTrade";
         }
+    }
 
-
+    @GetMapping("/payOrder")
+    public String pay(@RequestParam("orderSn")String orderSn,@RequestParam("type")Integer type){
+        orderService.payOrder(orderSn,type);
+        return "redirect:http://member.gulimall.com/memberOrder.html";
     }
 }

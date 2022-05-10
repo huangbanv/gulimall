@@ -4,7 +4,19 @@ spring:
       config:
         server-addr: 192.168.60.100:1111
         namespace: 896d2c96-a096-4618-a9df-49f61a62b432
+#        server-addr: 124.71.113.249:1234
+#        namespace: 10
         shared-configs[0]:
           data-id: cart.yml
+
   application:
     name: gulimall-cart
+
+
+feign:
+  sentinel:
+    enabled: true
+
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN

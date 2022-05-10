@@ -36,6 +36,14 @@ public class OAuth2Contoller {
     @Autowired
     MemberFeignService memberFeignService;
 
+    /**
+     * 微博需要审核，所以我换了gitee的
+     * @param code
+     * @param redirectAttributes
+     * @param session
+     * @return
+     * @throws Exception
+     */
     @GetMapping("/oauth2.0/weibo/success")
     public String weibo(@RequestParam("code")String code, RedirectAttributes redirectAttributes, HttpSession session) throws Exception {
         Map<String,String> map = new HashMap<>();

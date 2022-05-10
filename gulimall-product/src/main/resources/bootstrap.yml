@@ -8,3 +8,11 @@ spring:
           data-id: product.yml
   application:
     name: gulimall-product
+
+feign:
+  sentinel:
+    enabled: true
+
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN

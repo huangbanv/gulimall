@@ -85,7 +85,6 @@ public class LoginController {
              * 而重定向的时候用不了model，需要使用RedirectAttributes
              * 重定向携带数据是用了session的原理，只要跳到下一个页面取出了session
              * 后就会删除
-             * TODO 但是session问题需要解决
              */
             return "redirect:http://auth.gulimall.com/reg.html";
         }

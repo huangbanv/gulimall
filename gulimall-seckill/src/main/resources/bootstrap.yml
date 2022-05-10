@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.60.100:1111
+        namespace: 97104310-2633-4773-ac34-7b7579f7cea0
+        shared-configs[0]:
+          data-id: seckill.yml
+  application:
+    name: gulimall-seckill
+  task:
+    execution:
+      pool:
+        core-size: 5
+        max-size: 50
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN

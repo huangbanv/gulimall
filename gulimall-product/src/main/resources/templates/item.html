@@ -518,8 +518,14 @@
                             <span>￥</span>
                             <span th:text="${#numbers.formatDecimal(item.info.price,3,2)}">4499.00</span>
                         </li>
-                        <li>
-                            预约享资格
+                        <li style="color: red" th:if="${item.seckillInfo!=null}">
+                            <span th:if="${#dates.createNow().getTime() < item.seckillInfo.startTime}">
+                                商品将会在[[${#dates.format(new java.util.Date(item.seckillInfo.startTime),"yyyy-MM-dd HH:mm:ss")}]]进行秒杀
+                            </span>
+                            <span th:if="${#dates.createNow().getTime() >= item.seckillInfo.startTime&&#dates.createNow().getTime() <= item.seckillInfo.endTime}">
+                                商品正在秒杀 秒杀价为[[${#numbers.formatDecimal(item.seckillInfo.seckillPrice,1,2)}]]
+                            </span>
+
                         </li>
                         <li>
                             <a href="/static/item/">
@@ -635,13 +641,17 @@
                             </div>
                             <div>
                                 <button id="jian">
-                                    -
                                 </button>
                             </div>
 
                         </div>
                     </div>
-                    <div class="box-btns-two">
+                    <div class="box-btns-two" th:if="${item.seckillInfo!=null?(#dates.createNow().getTime() >= item.seckillInfo.startTime&&#dates.createNow().getTime() <= item.seckillInfo.endTime):false}">
+                        <a href="#" id="seckillA" th:attr="skuId=${item.info.skuId},sessionId=${item.seckillInfo.promotionSessionId},code=${item.seckillInfo.randomCode}">
+                            立即抢购
+                        </a>
+                    </div>
+                    <div class="box-btns-two" th:if="${item.seckillInfo!=null?(#dates.createNow().getTime() < item.seckillInfo.startTime|| #dates.createNow().getTime() > item.seckillInfo.endTime):true}">
                         <a href="#" id="addToCartA" th:attr="skuId=${item.info.skuId}">
                             加入购物车
                         </a>
@@ -1299,6 +1309,19 @@
         var num = $("#numInput").val();
         var skuId = $(this).attr("skuId");
         location.href="http://cart.gulimall.com/addToCart?skuId="+skuId+"&num="+num;
+    })
+    $("#seckillA").click(function (){
+        var isLogin = [[${session.loginUser != null}]]
+        if(isLogin){
+            var killId = $(this).attr("sessionId")+"_"+$(this).attr("skuId")
+            var key = $(this).attr("code")
+            var num = $("#numInput").val()
+            location.href="http://seckill.gulimall.com/kill?killId="+killId+"&key="+key+"&num="+num;
+
+        }else {
+            alert("秒杀请先登录")
+        }
+        return false;
     })
 </script>
 </html>

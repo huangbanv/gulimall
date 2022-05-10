@@ -1,6 +1,7 @@
 package com.zhangjun.gulimall.order.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhangjun.common.to.mq.SeckillOrderTo;
 import com.zhangjun.common.utils.PageUtils;
 import com.zhangjun.gulimall.order.entity.OrderEntity;
 import com.zhangjun.gulimall.order.vo.OrderConfirmVo;
@@ -24,5 +25,15 @@ public interface OrderService extends IService<OrderEntity> {
     OrderConfirmVo confirmOrder() throws ExecutionException, InterruptedException;
 
     SubmitOrderResponseVo submitOrder(OrderSubmitVo vo);
+
+    OrderEntity getOrderByOrderSn(String orderSn);
+
+    void closeOrder(OrderEntity entity);
+
+    void payOrder(String orderSn, Integer type);
+
+    PageUtils queryPageWithItem(Map<String, Object> params);
+
+    void createSeckillOrder(SeckillOrderTo seckillOrderTo);
 }
 

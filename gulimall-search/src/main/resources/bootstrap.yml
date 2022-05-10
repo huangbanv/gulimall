@@ -4,7 +4,16 @@ spring:
       config:
         server-addr: 192.168.60.100:1111
         namespace: bb93e9bf-7799-491c-a184-260ffa85318e
+#        server-addr: 124.71.113.249:1234
+#        namespace: 8
         shared-configs[0]:
           data-id: search.yml
   application:
     name: gulimall-search
+feign:
+  sentinel:
+    enabled: true
+
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN

@@ -5,7 +5,11 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 库存工作单
@@ -14,6 +18,8 @@ import lombok.Data;
  * @email 2328432115@qq.com
  * @date 2022-04-12 11:23:05
  */
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @TableName("wms_ware_order_task_detail")
 public class WareOrderTaskDetailEntity implements Serializable {

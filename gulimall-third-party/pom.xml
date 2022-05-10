@@ -30,7 +30,10 @@
             </exclusions>
 
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <dependency>
             <!--引入4.5.0 版本依赖-->
             <groupId>com.aliyun</groupId>

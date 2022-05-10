@@ -4,9 +4,14 @@ spring:
       config:
         server-addr: 192.168.60.100:1111
         namespace: 81762c0b-8bed-4a98-8596-6bf2fb3cc672
+#        server-addr: 124.71.113.249:1234
+#        namespace: 1
         shared-configs[0]:
           data-id: gulimall-gateway.yml
         shared-configs[1]:
           data-id: gateway.yml
       discovery:
         service: gulimall-gateway
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN

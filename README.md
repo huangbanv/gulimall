@@ -1,5 +1,7 @@
 # gulimall
 ### 这是尚硅谷的谷粒商城项目，配置文件我全放在nacos里面了，等到时候做完会放出来
+### 技术栈
+### springboot+springcloudalibaba+nacos+mysql+redis+nginx+rabbitmq+elasticsearch+openfeign等
 #### 开始学习于 2022‎年‎4‎月‎11‎日，‏‎18:12:49
 #### 项目完成于 2022‎年‎5‎月‎10‎日，‏‎13:00:49
 #### 本项目使用了人人代码生成器逆向生成了dao层的代码
@@ -14,3 +16,4 @@
 ##### seckill使用定时任务从redis中取出定时任务的信息
 ##### thirdparty使用邮箱来发送邮件，并且使用了阿里云的oss服务来存储图片信息
 ##### 各个微服务中使用openfeign来互相调用，nacos来做配置中心，sentinel来做服务降级服务熔断，zipkin来可视化监控
+##### 使用nginx来动态代理，动静分离
